@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Macondo&family=Sora:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lato:wght@700;900&family=Macondo&family=Sora:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lato:wght@700;900&family=Macondo&family=Playfair+Display:ital,wght@1,600&family=Sora:wght@300&display=swap');
+*{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+font-family: 'Lato', sans-serif;
+font-family: 'Macondo', cursive;
+font-family: 'Sora', sans-serif;
+ }
+ 
+.container{
+  background-color:#ffffff;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -30;
+}
+
+.nav-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #00A6CB;
+    height:10vh;
+    border-radius: 0 0 20px 20px;
+}
+.menubtn{ 
+    width: 10%;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1.8rem;
+    border-radius: 10%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  .menubtn:hover{
+    background-color: white;
+    color:#00A6CB;
+  }
+.nav-link{
+    text-align: center;
+    width: 90%;
+    border-radius: 0 0 20px 0;
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: white;
+}
+
+/* sidebar section */
+
+.sidebar{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;  
+  z-index: 1;
+  position: fixed;
+  height: 100vh;
+  left: -100%;
+  transition-duration: 0.7s;
+  width: 60%;
+  z-index: 1000;
+  }
+.sidebar.active{
+  left: 0;
+}
+.side-button{
+  background-color: #ffffff;
+  color: dodgerblue;
+  font-size: 1.2rem;
+  margin: 2% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  padding: 0.5rem 0;
+  border: none;
+}
+.side-button:hover{
+  background-color: #14caf3;
+  box-shadow: inset 7px 7px 7px 7px #80f3ff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  color:white;
+}
+        /* .into{
+			background-color: #46941D;
+			text-align: center;
+			font-size: 1.5rem;
+			margin: 5% auto 0;
+			border-radius: 10%;
+            display: none;
+		} */
+    
+  
+	
+
+.carousel {
+  margin-top: 1%;  
+}
+
+.carousel-cell {
+  width: 80%;
+  margin-right: 20%;
+  background: #ffffff;
+  border-radius: 20px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:5px solid #00A6CB;
+  box-shadow: 2px 8px 8px 4px rgba(20,20,20,0.4);
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
+.inner-div1{
+  width: 90%;
+  height: 90%;
+}
+
+.file-btn{
+	background: #00b8cb;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.file-btn:hover{
+  background-color:#31c970;
+  transition-duration: 0.3s;
+}
+
+.clk-btn{
+  background: #00818e;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.clk-btn:hover{
+  background-color: #f39141;
+  transition-duration: 0.3s;
+}
+.json-result{
+  border-radius: 1px solid gray;
+  height: 42vh;
+  width: 100%;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+  margin-top: 6%;
+}
+  
+
+
+
+.inner-div2{
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#speech-txt-area{
+  height: 75%;
+  width: 100%;
+  font-size: 1rem;
+  background-color: rgb(226, 226, 226);
+  color: black;
+  margin: 5% auto;
+  border-radius: 5px;
+}
+.rounded {
+  color: #ffffff;
+  cursor: pointer;
+	 width: 50%;
+	border-radius: 3.75rem;
+	font-size: 1.8rem;
+	font-weight: 600;
+	border: 1px solid #00818e;
+	background-image: linear-gradient(-180deg, #80f3ff 0%, #00A6CB 70%);
+  margin: 5% auto;
+}
+.rounded:hover{
+  background-color:#00A6CB;
+  border: 1px solid white;
+}
+
+
+
+.ad-div{
+  background-color: #ffffff;
+  width: 100%;
+  height: 12vh;
+  /* border-radius: 20px 20px 0 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid black;
+}
+.label-1{
+  font-size: 1.8rem;
+  font-weight: bolder;
+  font-family: 'Playfair Display', serif;;
+}
+.label-2{
+  font-size:1.2rem;
+}
+.ad-btn{
+  font-size: 1.3rem;
+  background-color: transparent;
+  color: #00A6CB;
+  border: 1px solid #00A6CB;
+  border-radius: 15px;
+  padding:10% 5%;
+  cursor: pointer;
+  width:110%;
+}
+input[type="file"] {
+    display: none;
+}
+
+
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-group {
+	display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+}
+
+
+.form label{
+  margin-bottom: 0.4rem;
+   display: inline-block;
+   font-weight: 600;
+   color: #00b8cb;
+}
+.form input {
+	width: 100%;
+  height: 2rem;
+	padding: 0 0.5rem;
+	border: 3px solid #00A6CB;
+	border-radius: 0.3rem;
+}
+.form button {
+	cursor: pointer;
+   display: inline-block;
+	height: 2.25rem;
+	width: 100%;
+   margin-top: 0.75rem;
+	border: 0;
+	border-radius: 0.3rem;
+	background: #00818e;
+	color: white;
+	font-size: 15px;
+   text-align: center;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+     
+  
+
+
+
+  <div class="sidebar" id="sideid">
+    <!-- <button class="into">X</button> -->
+    <button class="side-button" id="homebtn">Home</button>
+    <button class="side-button" id="whishlistbtn">Contact Us</button>
+    Send your queries to hearit@mavs.com
+    <button class="side-button" id="more-btn">about</button>
+    This application is a complete aid for peoples who are hearingly impaired
+</div>
+
+
+
+    <div class="nav-div">
+      <button class="menubtn"><i id="menuid" class="fa fa-bars"></i></button>
+      <div class="nav-link">HEAR IT</div>
+    </div>
+
+    
+
+    <!-- Flickity HTML init -->
+    <div class="carousel"
+      data-flickity='{ "wrapAround": true }'>
+      <div class="carousel-cell">
+        <div class="inner-div1">
+          <div>
+            <form method="post" id="datafetch_form" enctype="multipart/form-data">
+                <label class="file-btn" style="margin-right: 2%;">
+                  <input type="file" id="data" accept=".wav">
+                  UPLOAD File
+              </label>
+              <button class="clk-btn" id="fetch">Predict</button>
+            </form>
+            
+          </div>
+          <i style="color: red; margin-top:5%;">Please upload your file in .wav format</i>
+          <form action="/towav" method="get">
+            <label for="" style="color: blue;">To .wav format:  </label><button type="submit" class="clk-btn">TO_WAV</button>
+          </form>
+          <!-- <a href="file:///D:/Anand%20Project%20Codes/hackathon/Hear_It/templates/to_wav.html">To convert your file to wav format 'click here'</a> -->
+          <div>
+              <div class="json-result">
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="carousel-cell">
+        <div class="inner-div2">
+          <button class="rounded" onclick="speechTxt()">TAP</button>
+          <center><label for="">to speak!</label></center>
+          <div placeholder="output text here..." name="" id="speech-txt-area" cols="30" rows="10">
+            <p id="p"></p>
+          </div>
+      </div> 
+      </div>
+      <div class="carousel-cell" style="display: flex; flex-direction:column;">
+        <div>Teachable Machine Audio Model</div>
+          <button class="clk-btn" type="button" onclick="init()">Start</button>
+        <div id="label-container" style="border: 2px solid #00A6CB;"></div>
+
+      </div>
+      <div class="carousel-cell">
+        <!-- <form action="/donate" method="get">
+          <button type="submit" class="clk-btn">donate</button>
+        </form> -->
+
+        <div class="form">
+            <form action="/payment" method="get">
+               <h2 style="font-family: 'Jost', sans-serif; font-size: 3.5rem; color:#00818e;"><i>Donate Now</i> </h2>
+               <div class="form-group">
+                  <label for="name">Your Full Name</label>
+                  <input type="text" name="name" placeholder="Enter your name">
+               </div>
+               
+               <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" name="email" placeholder="Enter your mail id">
+               </div>
+
+               <div class="form-group">
+                  <label for="number">Phone Number</label>
+                  <input type="text" name="number" placeholder="Enter your mobile number">
+               </div>
+
+               <div class="form-group">
+
+               </div>
+               
+               <button>Proceed to payment</button>
+
+            </form>
+          </div>  
+      </div>
+      <div class="carousel-cell" style="overflow-y: scroll;">
+        <div class="form">
+          <form>
+             <h2 style="font-family: 'Jost', sans-serif; font-size: 3rem; color:#00818e;"><i>Request form</i> </h2>
+             <div class="form-group">
+                <label for="name">Your Full Name</label>
+                <input type="text" name="name" placeholder="Enter your name">
+             </div>
+             
+             <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" placeholder="Enter your mail id">
+             </div>
+
+             <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="text" name="number" placeholder="Enter your mobile number">
+             </div>
+             <div class="form-group">
+              <label for="upload">Upload prescription</label>
+              <input type="file" name="upload" >
+           </div>
+           <div class="form-group">
+            <label for="number">Amount:</label>
+            <input type="text" name="number" placeholder="Enter your amount INR">
+         </div>
+            <button>Submit request</button>
+     </form>
+    </div>
+      </div>
+    </div>
+
+    <!-- <div class="down-div"> -->
+      <div class="ad-div">
+        <div style="display:flex; flex-direction:column;">
+          <label for="" class="label-1"><b>Upto 90% offer </b>
+            </label>
+          <label for="" class="label-2"><b>on hearing equipments</b>
+            </label>
+        </div>
+        <form action="/shopping" method="get">
+          <button class="ad-btn">Shop now</button>
+        </form>
+        
+      </div>
+    <!-- </div> -->
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loading').hide();
+			var voicedata;
+			$("#data").change(function(e){ });
+			$("#fetch").click(function(e){
+				e.preventDefault();
+				if (voicedata == "") {
+					alert("No files selected.");
+				}
+				else{
+					let promise = new Promise(function(resolve, reject){
+						var reader = new FileReader();
+						reader.onload = function(){
+						  var arrayBuffer = reader.result;
+						  var base64str = btoa(arrayBuffer);
+						  voicedata  = 'data:audio/wav;base64,' + base64str;
+						  resolve(voicedata.replace('data:audio/wav;base64,', ''));	
+						};
+						reader.readAsBinaryString($('#data').get(0).files[0]);
+					});
+				
+					promise.then(result =>{
+						$('#loading').show();
+						$.ajax({
+							url : " ../predict",   //change url
+							type: "post",
+							mode: 'no-cors',
+							crossdomain: true,
+							withCredentials: false,
+							credentials: 'same-origin',
+							headers: {
+								'Content-Type': 'application/json;charset=UTF-8',
+								"Access-Control-Allow-Origin": "*"
+							},
+							data: JSON.stringify({sound:result}),
+							success: function(response){
+								$(".json-result").html("");
+								$(".json-result").html("<pre>" + JSON.stringify(response.Result,true,2) + "</pre>");
+								$('#loading').hide();
+							}
+						});
+					});
+				}
+			});
+		});
+	</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+
+<script type="text/javascript">
+  const URL = "https://teachablemachine.withgoogle.com/models/wfVW9tJHS/";
+
+  async function createModel() {
+      const checkpointURL = URL + "model.json"; // model topology
+      const metadataURL = URL + "metadata.json"; // model metadata
+
+      const recognizer = speechCommands.create(
+          "BROWSER_FFT", // fourier transform type, not useful to change
+          undefined, // speech commands vocabulary feature, not useful for your models
+          checkpointURL,
+          metadataURL);
+
+      // check that model and metadata are loaded via HTTPS requests.
+      await recognizer.ensureModelLoaded();
+
+      return recognizer;
+  }
+
+  async function init() {
+      const recognizer = await createModel();
+      const classLabels = recognizer.wordLabels(); // get class labels
+      const labelContainer = document.getElementById("label-container");
+      for (let i = 0; i < classLabels.length; i++) {
+          labelContainer.appendChild(document.createElement("div"));
+      }
+
+      // listen() takes two arguments:
+      // 1. A callback function that is invoked anytime a word is recognized.
+      // 2. A configuration object with adjustable fields
+      recognizer.listen(result => {
+          const scores = result.scores; // probability of prediction for each class
+          // render the probability scores per class
+          for (let i = 0; i < classLabels.length; i++) {
+              const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
+              labelContainer.childNodes[i].innerHTML = classPrediction;
+              if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="calling"){
+                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
+                  alert("somebody is calling you")
+              }
+              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="carhorn"){
+                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
+                  alert("A vehicle is behind you");
+              }
+              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="siren"){
+                  alert("Ambulance ahead");
+              }
+          }
+      }, {
+          includeSpectrogram: true, // in case listen should return result.spectrogram
+          probabilityThreshold: 0.75,
+          invokeCallbackOnNoiseAndUnknown: true,
+          overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+      });
+
+      // Stop the recognition in 5 seconds.
+      // setTimeout(() => recognizer.stopListening(), 5000);
+  }
+</script>
+  
+
+
+    <script>
+    let menu=document.querySelector('.menubtn');
+		let side=document.querySelector('.sidebar');
+		menu.addEventListener('click',function(){
+				side.classList.add('active');
+        window.addEventListener('click',function(event){
+          if(event.target.id!=='sideid' && event.target.id!=='menuid'){
+              side.classList.remove('active');
+          }
+    });
+       
+		});
+    
+    
+    
+		// into.addEventListener('click',function(){
+		// 	side.classList.remove('active');
+		// })
+    </script>
+    <script>
+      function speechTxt(){
+        var speech = true;
+        window.SpeechRecognition = window.SpeechRecognition||window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.interimResults = true;
+        const words = document.querySelector('#speech-txt-area');
+        words.appendChild(p);
+  
+          recognition.addEventListener('result', e => {
+          const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
+  
+          document.getElementById("speech-txt-area").innerHTML = transcript;
+          console.log(transcript);
+        });
+        
+        if (speech == true) {
+          recognition.start();
+          recognition.addEventListener('end', recognition.start);
+        }
+  
+      }
+      </script>
+</body>
+</html>
