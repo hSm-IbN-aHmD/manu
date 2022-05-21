@@ -1,0 +1,250 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #F7F7F7;
+}
+
+.loader {
+    position: fixed;
+    margin: 0 auto;
+    background-color: #F7F7F7;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    cursor: wait;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.options {
+    padding: 0px;
+}
+
+.details {
+    padding: 0px;
+}
+
+.payment-component {
+    border: #DDD thin solid;
+    background-color: #EEE;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+.payment-options > ul > li.active, .payment-options > ul > li.active:focus, .payment-options > ul > li.active:hover {
+    background-color: #003767;
+    border-color: #003767;
+}
+
+    .payment-options > ul > li.active .list-group-item-text, .payment-options > ul > li.active:focus .list-group-item-text, .payment-options > ul > li.active:hover .list-group-item-text {
+        color: inherit;
+    }
+
+.payment-options > ul {
+    margin-bottom: 0px;
+}
+
+    .payment-options > ul > li {
+        border-left: 0px;
+        position: relative;
+    }
+
+        .payment-options > ul > li.active {
+            color: #FFF;
+            border-color: #003767;
+            background-color: #003767;
+        }
+
+            .payment-options > ul > li.active a {
+                color: #FFF;
+            }
+
+        .payment-options > ul > li a {
+            color: #3e3e3e;
+        }
+
+            .payment-options > ul > li a:hover, .payment-options > ul > li a:active, .payment-options > ul > li > a:visited, .payment-options > ul > li a:focus {
+                text-decoration: none;
+            }
+
+            .payment-options > ul > li a h5 {
+                font-weight: bold;
+                font-size: 115%;
+            }
+
+        .payment-options > ul > li:first-child, .payment-options > ul > li:last-child {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+.payment-option-details .tab-pane {
+    padding: 10px 15px;
+    background-color: #FFF;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.payment-option-details {
+    border-left: #DDD thin solid;
+    min-height: 250px;
+}
+
+.card-icons-top {
+    margin-top: 20px;
+}
+
+.transaction-summary {
+    border-color: #003767;
+}
+
+    .transaction-summary .panel-heading {
+        border-color: #003767;
+        background-color: #003767;
+    }
+
+    .transaction-summary .panel-title {
+        color: #FFF;
+    }
+
+.pay-btn {
+    margin-bottom: 10px;
+    background-color: #E8870C;
+    border-color: #E8870C;
+}
+
+    .pay-btn:hover {
+        margin-bottom: 10px;
+        background-color: #E8870C;
+        border-color: #E8870C;
+    }
+
+.ins-subheader {
+    font-weight: bold;
+    padding: 10px 0px;
+    border-bottom: #a6e1ec thin solid;
+}
+
+.ins-toggle {
+    cursor: pointer;
+}
+
+.ins-subheader .fa-li {
+    top: 1em;
+}
+
+.instructions hr {
+    margin-top: 10px;
+}
+
+.instruction {
+    display: none;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.success-icon {
+    color: green;
+    vertical-align: middle;
+}
+
+.rating-star {
+    color: green;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.card-form .form-group {
+    border: #DDD thin solid;
+    border-radius: 3px;
+    padding: 2% 4%;
+}
+
+.card-form .form-control {
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+.card-form .input-group-addon {
+    background: none;
+    border: none;
+    border-radius: 0px;
+}
+
+
+.validation.text-danger:after {
+    content: 'Validation failed';
+}
+
+.validation.text-success:after {
+    content: 'Validation passed';
+}
+
+.card-form .has-error {
+    border-width: 1px;
+    border-color: red;
+}
+
+.card-form .form-control:focus {
+    box-shadow: none;
+}
+
+.cc-brand .fa {
+    font-size: 18px;
+}
+
+#confirmation {
+    display: none;
+}
+
+.confirmation {
+    padding-bottom: 40px;
+}
+
+.finish-btn {
+    background-color: #E8870C;
+    border-color: #E8870C;
+}
+
+.toggle-icons {
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* For mobile phones: */
+
+    .pay-btn {
+        width: 100%;
+    }
+
+    .payment-option-details {
+        border-left: none;
+        min-height: inherit;
+    }
+
+    .payment-options > ul > li:first-child {
+        border-radius: 0px;
+    }
+
+    .finish-btn {
+        width: 100%;
+    }
+
+    .form-header {
+        font-size: 20px;
+    }
+
+    .cardpaymentform {
+        border: none;
+    }
+
+        .cardpaymentform .panel-body {
+            padding: 10px 0px;
+        }
+}
